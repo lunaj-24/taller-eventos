@@ -5,4 +5,4 @@ function saludarOnClickDiv() {
 window.onload = function() {
     // Configura el evento para el div
     document.getElementById('elDiv').addEventListener('click', saludarOnClickDiv);
-}S
+}
