@@ -1,20 +1,36 @@
 
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="utf-8">
-    </head>
-    <body>
+<head>
+    <meta charset="utf-8">
+</head>
+    
+<body>
+    <div id="elDiv">
         <button type="button" id="btnSaludar">SALUDAR</button>
+        
+        <style>
+        div {
+            padding: 5px;
+            background-color: green;
+        }
+       </style>
+    </div>
 
-        <script>
-            function saludarOnClick() {
-                alert("Hola!");
-            }
+    <script src="eventos.js" defer></script>
+    <script>
+        function saludarOnClick() { // funcionalidad del boton en html
+            alert("Hola!");
+            event.stopPropagation()
+        }
+
+        window.onload = function() {
+            // Evento para el botón
+            document.getElementById('btnSaludar').addEventListener('click', saludarOnClick);
             
-            window.onload = function() {
-                document.getElementById('btnSaludar').addEventListener('click', saludarOnClick);
-            }
-        </script>
-    </body>
+            // Evento para el div ambos en el mismo window onload para que se carguen en simultaneo. Arch. JS contiene funcionalidad
+            document.getElementById('elDiv').addEventListener('click', saludarOnClickDiv);
+        }
+    </script>
+</body>
 </html>
