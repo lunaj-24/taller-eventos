@@ -7,7 +7,7 @@
     
 <body>
     <div id="elDiv">
-        <button type="button" id="btnSaludar">SALUDAR</button>
+        <button type="button" id="btnSaludar" onclick="saludarOnClick(event)">SALUDAR</button>
         
         <style>
         div {
@@ -17,20 +17,13 @@
        </style>
     </div>
 
-    <script src="eventos.js" defer></script>
+    <script src="eventos.js"></script>
     <script>
-        function saludarOnClick() { // funcionalidad del boton en html
-            alert("Hola!");
-            event.stopPropagation()
-        }
-
-        window.onload = function() {
-            // Evento para el botón
-            document.getElementById('btnSaludar').addEventListener('click', saludarOnClick);
-            
-            // Evento para el div ambos en el mismo window onload para que se carguen en simultaneo. Arch. JS contiene funcionalidad
-            document.getElementById('elDiv').addEventListener('click', saludarOnClickDiv);
+        function saludarOnClick() {
+            alert('Hola!')
+            event.stopPropagation();
         }
     </script>
+
 </body>
 </html>
